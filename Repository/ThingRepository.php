@@ -32,7 +32,7 @@ class ThingRepository
 		$this->get('thing')->register($newThing);
 
 		/**
-		 * Perhaps do some SQL because this is my it's called a repository, right?
+		 * Perhaps do some SQL because this is why it's called a repository, right?
 		 */
 		$this->doSomeSql();
 
