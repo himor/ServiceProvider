@@ -13,10 +13,12 @@ require_once '/Service/ThingService.php';
 
 class Application
 {
+	use ServiceProvider;
+
 	public static function run()
 	{
 		$thing = new Thing();
-		ThingModel::_()->doStuff($thing);
+		$this->getModel('thing')->doStuff($thing);
 	}
 }
 

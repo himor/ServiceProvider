@@ -52,4 +52,25 @@ trait ServiceProvider
 		return $this->get('repository')->get($name);
 	}
 
+	/**
+	 * Returns a model by name
+	 * or for current class if name is not specified
+	 *
+	 * @param string $name
+	 */
+	public function getModel($name = null)
+	{
+		if (!$name) {
+			$name = __CLASS__;
+			if (strpos($name, 'Model') !== false)
+				$name = substr($name, 0, strpos($name, 'Model'));
+			if (strpos($name, 'Repository') !== false)
+				$name = substr($name, 0, strpos($name, 'Repository'));
+			if (strpos($name, 'Service') !== false)
+				$name = substr($name, 0, strpos($name, 'Service'));
+		}
+
+		return $this->get('model')->get($name);
+	}
+
 }
