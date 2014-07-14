@@ -9,9 +9,14 @@ class Thing
 	use ServiceProvider;
 
 	private $id;
+	private $code;
+	private $timestamp;
 
-	public function getId()
+	public function __construct($id)
 	{
-		return $this->id;
+		$this->id 		 = $id;
+		$this->timestamp = microtime(true);
+		$this->code      = time() . '|' . $this->timestamp . '|' . md5(microtime());
 	}
+
 }
