@@ -6,7 +6,7 @@ class SharedService
 {
 	use ServiceProvider;
 
-	const QUEUE_ID = 14000;
+	const QUEUE_ID = 178;
 	private $queue;
 
 	/**
@@ -39,8 +39,9 @@ class SharedService
 	public function get()
 	{
 		$msg = null;
+		$null = null;
 
-		if (msg_receive($this->queue, 1, null, 512, $msg)) {
+		if (msg_receive($this->queue, 1, $null, 512, $msg)) {
 			return $msg;
 		} else {
 			return null;

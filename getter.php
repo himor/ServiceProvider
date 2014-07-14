@@ -59,5 +59,5 @@ class Application
 
 $start = microtime(true);
 $app = new Application('shared');
-$app->run();
+$app->run2();
 echo "\nTotal time: " . (microtime(true) - $start);

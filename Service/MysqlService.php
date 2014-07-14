@@ -19,7 +19,7 @@ class MysqlService
 	 */
 	public function __construct()
 	{
-		$this->c = mysql_connect('localhost', 'root', 'root');
+		$this->c = mysql_connect('10.8.0.249', 'duser041', 'Smart96183');
 
 		if (!$this->c)
 			throw new Exception('FAILED TO CONNECT TO MYSQL');
